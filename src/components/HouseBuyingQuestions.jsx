@@ -243,7 +243,7 @@ const HouseBuyingQuestions = () => {
                 Next
               </button>
               <p className="text-xs text-gray-500 mt-2 text-center">
-                Continue to view personalized property recommendations
+                Continue to view dashboard
               </p>
             </div>
           </div>
