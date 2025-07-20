@@ -29,8 +29,6 @@ const RegisterComponent = () => {
     if (!formData.name.trim()) newErrors.name = 'Name is required';
     if (!formData.phone.trim()) {
       newErrors.phone = 'Phone number is required';
-    } else if (!/^[6-9]\d{9}$/.test(formData.phone.replace(/\D/g, ''))) {
-      newErrors.phone = 'Please enter a valid Indian mobile number (10 digits starting with 6-9)';
     }
     if (!formData.email.trim()) {
       newErrors.email = 'Email is required';
