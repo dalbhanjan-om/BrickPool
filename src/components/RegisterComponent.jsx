@@ -82,8 +82,7 @@ const RegisterComponent = () => {
 
   const handleNext = () => {
     if (otpVerified) {
-      // Navigate to /questions
-    
+      navigate('/questions');
     }
   };
 
@@ -312,7 +311,7 @@ const RegisterComponent = () => {
                   </button>
                 ) : (
                   <button
-                    onClick={()=>Navigate('/questions')}
+                    onClick={handleNext}
                     className="flex-1 py-3 px-4 rounded-lg font-medium text-white transition-colors flex items-center justify-center gap-2"
                     style={{ backgroundColor: '#50E3C2' }}
                   >
