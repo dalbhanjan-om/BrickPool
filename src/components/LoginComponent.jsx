@@ -7,7 +7,7 @@ const LoginComponent = () => {
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
     contact: '',
-    contactType: 'email',
+    contactType: 'phone',
     role: 'Buyer',
     verificationCode: ''
   });
