@@ -13,7 +13,7 @@ function App() {
         <Route path='/Login' element={<LoginComponent />} />
         <Route path='/Register' element={<RegisterComponent />} />
         <Route path='/dashboard' element={<Dashboard />} />
-        <Route path='/questions' element={<HouseBuyingQuestions />} />
+        <Route path='/house-buying-questions' element={<HouseBuyingQuestions />} />
         {/* Add more routes as needed */}
       </Routes>
     </BrowserRouter>

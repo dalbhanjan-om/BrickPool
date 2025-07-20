@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { ChevronRight, Phone, Mail, User, Building, UserCheck, Check } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const RegisterComponent = () => {
+    const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -81,7 +83,7 @@ const RegisterComponent = () => {
   const handleNext = () => {
     if (otpVerified) {
       // Navigate to /questions
-      window.location.href = '/questions';
+    
     }
   };
 
@@ -310,7 +312,7 @@ const RegisterComponent = () => {
                   </button>
                 ) : (
                   <button
-                    onClick={handleNext}
+                    onClick={()=>Navigate('/questions')}
                     className="flex-1 py-3 px-4 rounded-lg font-medium text-white transition-colors flex items-center justify-center gap-2"
                     style={{ backgroundColor: '#50E3C2' }}
                   >
