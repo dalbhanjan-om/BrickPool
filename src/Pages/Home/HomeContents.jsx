@@ -27,16 +27,9 @@ const HomePage = () => {
     {
       type: 'Real Estate Brokers',
       description: 'Expand your network and earn through our referral system',
-      features: ['Lead Generation', 'Client Management', 'Commission Tracking', 'Builder Network'],
+      features: ['Lead Generation', 'Client Management', 'Commission Tracking', 'Buyer Network'],
       color: 'bg-teal-50 border-teal-200',
       icon: Users
-    },
-    {
-      type: 'Property Builders',
-      description: 'Connect with buyers and brokers to boost your sales',
-      features: ['Project Listings', 'Broker Partnerships', 'Sales Analytics', 'Marketing Tools'],
-      color: 'bg-indigo-50 border-indigo-200',
-      icon: Building
     }
   ];
 
@@ -54,13 +47,6 @@ const HomePage = () => {
       content: 'Increased my monthly earnings by 40% through BrickPool referrals.',
       rating: 5,
       location: 'Delhi'
-    },
-    {
-      name: 'Vikram Builders',
-      role: 'Property Builder',
-      content: 'Connected with 50+ verified brokers for our new project in Bangalore.',
-      rating: 5,
-      location: 'Bangalore'
     }
   ];
 
@@ -90,22 +76,25 @@ const HomePage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Built for Every Real Estate Professional
+              For Buyers & Brokers
             </h2>
             <p className="text-xl text-gray-600">
-              Whether you're buying, selling, or building, we have the right tools for you
+              Whether you're buying or brokering, we have the right tools for you
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 gap-10">
             {userTypes.map((user, index) => {
               const Icon = user.icon;
               return (
-                <div key={index} className={`${user.color} rounded-xl p-8 border-2`}>
-                  <Icon className="h-12 w-12 text-blue-500 mb-6" />
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">{user.type}</h3>
-                  <p className="text-gray-600 mb-6">{user.description}</p>
-                  <ul className="space-y-3 mb-8">
+                <div key={index} className={`${user.color} rounded-2xl p-10 border-2 shadow-md hover:shadow-xl transition-shadow duration-300 group relative overflow-hidden`}> 
+                  <div className="absolute -top-8 -right-8 opacity-10 text-9xl pointer-events-none select-none group-hover:opacity-20 transition-opacity duration-300">
+                    <Icon className="w-32 h-32" />
+                  </div>
+                  <Icon className="h-14 w-14 text-blue-500 mb-6 z-10 relative" />
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4 z-10 relative">{user.type}</h3>
+                  <p className="text-gray-600 mb-6 z-10 relative">{user.description}</p>
+                  <ul className="space-y-3 mb-8 z-10 relative">
                     {user.features.map((feature, idx) => (
                       <li key={idx} className="flex items-center text-gray-700">
                         <CheckCircle className="h-5 w-5 text-teal-400 mr-3 flex-shrink-0" />
@@ -113,7 +102,7 @@ const HomePage = () => {
                       </li>
                     ))}
                   </ul>
-                  <button className="w-full bg-blue-500 hover:bg-blue-600 text-white py-3 rounded-lg font-medium transition-colors duration-200 flex items-center justify-center">
+                  <button className="w-full bg-gradient-to-r from-blue-500 to-teal-400 hover:from-blue-600 hover:to-teal-500 text-white py-3 rounded-xl font-semibold transition-all duration-200 flex items-center justify-center shadow group-hover:scale-105 group-hover:shadow-lg">
                     Get Started
                     <ArrowRight className="h-5 w-5 ml-2" />
                   </button>
@@ -178,13 +167,13 @@ const HomePage = () => {
               Success Stories
             </h2>
             <p className="text-xl text-gray-600">
-              Hear from our satisfied users across India
+              Hear from our satisfied buyers and brokers
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 gap-10">
             {testimonials.map((testimonial, index) => (
-              <div key={index} className="bg-white rounded-xl p-8 shadow-sm border border-gray-200">
+              <div key={index} className="bg-white rounded-2xl p-10 shadow-md border border-gray-200 hover:shadow-xl transition-shadow duration-300">
                 <div className="flex items-center mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
                     <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
@@ -209,20 +198,20 @@ const HomePage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-blue-500 text-white py-20">
+      <section className="bg-gradient-to-r from-blue-500 to-teal-400 text-white py-20">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Ready to Transform Your Real Estate Journey?
           </h2>
           <p className="text-xl text-blue-100 mb-8">
-            Join thousands of successful buyers, brokers, and builders on BrickPool today.
+            Join thousands of successful buyers and brokers on BrickPool today.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-blue-500 hover:bg-gray-100 px-8 py-4 rounded-lg font-bold text-lg transition-colors duration-200">
+            <button className="bg-white text-blue-500 hover:bg-gray-100 px-8 py-4 rounded-xl font-bold text-lg transition-colors duration-200 shadow">
               Start as Buyer
             </button>
-            <button className="bg-teal-400 hover:bg-teal-500 text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors duration-200">
-              Join as Professional
+            <button className="bg-teal-400 hover:bg-teal-500 text-white px-8 py-4 rounded-xl font-bold text-lg transition-colors duration-200 shadow">
+              Join as Broker
             </button>
           </div>
         </div>

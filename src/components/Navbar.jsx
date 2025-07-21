@@ -70,20 +70,20 @@ const Navbar = () => {
       {showLanguageModal && <LanguageModal />}
 
       <nav className="bg-white/95 backdrop-blur-xl border-b border-gray-200/50 shadow-xl sticky top-0 z-40">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center py-4">
+        <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
+          <div className="flex flex-row items-center py-3 sm:py-4 gap-2 sm:gap-0">
             {/* Logo */}
-            <div className="flex items-center space-x-3 flex-shrink-0">
+            <div className="flex items-center space-x-2 sm:space-x-3 flex-shrink-0">
               <div className="relative group">
-                <div className="bg-gradient-to-br from-blue-500 via-purple-500 to-blue-600 p-3 rounded-2xl shadow-xl group-hover:shadow-2xl transition-all duration-300 transform group-hover:scale-105">
-                  <Home className="text-white w-7 h-7" />
+                <div className="bg-gradient-to-br from-blue-500 via-purple-500 to-blue-600 p-2 sm:p-3 rounded-2xl shadow-xl group-hover:shadow-2xl transition-all duration-300 transform group-hover:scale-105">
+                  <Home className="text-white w-6 h-6 sm:w-7 sm:h-7" />
                 </div>
-                <div className="absolute -top-1 -right-1 w-4 h-4 bg-gradient-to-r from-emerald-400 to-green-400 rounded-full animate-pulse shadow-md">
-                  <Sparkles className="w-2 h-2 text-white absolute top-1 left-1" />
+                <div className="absolute -top-1 -right-1 w-3 h-3 sm:w-4 sm:h-4 bg-gradient-to-r from-emerald-400 to-green-400 rounded-full animate-pulse shadow-md">
+                  <Sparkles className="w-1.5 h-1.5 sm:w-2 sm:h-2 text-white absolute top-1 left-1" />
                 </div>
               </div>
               <div>
-                <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-blue-700 bg-clip-text text-transparent">
+                <h1 className="text-lg sm:text-2xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-blue-700 bg-clip-text text-transparent">
                   BrickPool
                 </h1>
                 <div className="hidden sm:block">
@@ -107,16 +107,16 @@ const Navbar = () => {
             )}
 
             {/* Auth Buttons */}
-            <div className="flex items-center space-x-3 flex-shrink-0 ml-auto lg:ml-0">
+            <div className="flex flex-row items-center space-x-2 sm:space-x-3 flex-shrink-0 ml-auto mt-0">
               <button
                 onClick={() => navigate('/login')}
-                className="px-5 py-2.5 border-2 border-gray-200 text-gray-700 rounded-xl hover:border-blue-400 hover:text-blue-600 hover:bg-blue-50/50 transition-all duration-300 font-medium shadow-sm hover:shadow-md backdrop-blur-sm"
+                className="px-3 py-1.5 sm:px-5 sm:py-2.5 border-2 border-gray-200 text-gray-700 rounded-lg sm:rounded-xl hover:border-blue-400 hover:text-blue-600 hover:bg-blue-50/50 transition-all duration-300 font-medium text-sm sm:text-base shadow-sm hover:shadow-md backdrop-blur-sm w-20 sm:w-auto"
               >
                 Login
               </button>
               <button
                 onClick={() => navigate('/register')}
-                className="px-5 py-2.5 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 font-medium transform hover:scale-105 relative overflow-hidden group"
+                className="px-3 py-1.5 sm:px-5 sm:py-2.5 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white rounded-lg sm:rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 font-medium text-sm sm:text-base transform hover:scale-105 relative overflow-hidden group w-20 sm:w-auto"
               >
                 <span className="relative z-10">Register</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
