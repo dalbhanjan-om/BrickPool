@@ -19,8 +19,7 @@ const RegisterComponent = () => {
 
   const roles = [
     { value: 'buyer', label: 'Buyer', icon: User },
-    { value: 'broker', label: 'Broker', icon: Building },
-    { value: 'builder', label: 'Builder', icon: UserCheck }
+    { value: 'broker', label: 'Broker', icon: Building }
   ];
 
   const validateForm = () => {
@@ -141,13 +140,15 @@ const RegisterComponent = () => {
                   Phone Number
                 </label>
                 <div className="relative">
-                  <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
+                  <span className="absolute left-3 top-1/2 transform -translate-y-1/2 flex items-center text-gray-700 text-base z-10">
+                    <span className="mr-1">🇮🇳</span>+91
+                  </span>
                   <input
                     type="tel"
                     value={formatPhoneNumber(formData.phone)}
                     onChange={(e) => handleInputChange('phone', e.target.value)}
                     placeholder="98765 43210"
-                    className="w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:outline-none transition-colors"
+                    className="w-full pl-20 pr-4 py-3 border rounded-lg focus:ring-2 focus:outline-none transition-colors"
                     style={{ 
                       borderColor: errors.phone ? '#EF4444' : '#E5E7EB',
                       focusRingColor: '#4A90E2'
