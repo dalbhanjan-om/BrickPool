@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, ArrowRight, Users, Briefcase, TrendingUp, Shield, Clock, Award, Sparkles } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const BenefitsComponent = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -9,6 +10,7 @@ const BenefitsComponent = () => {
   const autoSlideRef = useRef(null);
   const minSwipeDistance = 50;
   const autoSlideInterval = 4000; // 4 seconds
+  const navigate = useNavigate();
 
   const buyerBenefits = [
     { icon: TrendingUp, text: "Track how many buyers are joining your pool in real time." },
@@ -164,7 +166,10 @@ const BenefitsComponent = () => {
               </div>
 
               <div className="mt-8 text-center">
-                <button className="group relative inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-2xl font-semibold shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/40 hover:scale-105 transition-all duration-300 overflow-hidden">
+                <button
+                  className="group relative inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-2xl font-semibold shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/40 hover:scale-105 transition-all duration-300 overflow-hidden"
+                  onClick={() => navigate('/register')}
+                >
                   <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <Users className="w-6 h-6 relative z-10" />
                   <span className="relative z-10">Join Pool</span>
@@ -217,7 +222,10 @@ const BenefitsComponent = () => {
               </div>
 
               <div className="mt-8 text-center">
-                <button className="group relative inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-green-600 to-emerald-600 text-white rounded-2xl font-semibold shadow-lg shadow-green-500/25 hover:shadow-xl hover:shadow-green-500/40 hover:scale-105 transition-all duration-300 overflow-hidden">
+                <button
+                  className="group relative inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-green-600 to-emerald-600 text-white rounded-2xl font-semibold shadow-lg shadow-green-500/25 hover:shadow-xl hover:shadow-green-500/40 hover:scale-105 transition-all duration-300 overflow-hidden"
+                  onClick={() => navigate('/register')}
+                >
                   <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <Briefcase className="w-6 h-6 relative z-10" />
                   <span className="relative z-10">Become Broker</span>
@@ -334,11 +342,14 @@ const BenefitsComponent = () => {
           </div>
 
           {/* Call to Action Button */}
-          <button className={`group relative flex items-center gap-3 px-8 py-4 rounded-2xl font-semibold text-white shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-300 overflow-hidden bg-gradient-to-r ${
-            currentSlideData.type === 'buyer' 
-              ? 'from-blue-600 to-indigo-600 hover:shadow-blue-500/40' 
-              : 'from-green-600 to-emerald-600 hover:shadow-green-500/40'
-          }`}>
+          <button
+            className={`group relative flex items-center gap-3 px-8 py-4 rounded-2xl font-semibold text-white shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-300 overflow-hidden bg-gradient-to-r ${
+              currentSlideData.type === 'buyer' 
+                ? 'from-blue-600 to-indigo-600 hover:shadow-blue-500/40' 
+                : 'from-green-600 to-emerald-600 hover:shadow-green-500/40'
+            }`}
+            onClick={() => navigate('/register')}
+          >
             <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             <CtaIcon className="w-5 h-5 relative z-10" />
             <span className="relative z-10 text-base">{currentSlideData.ctaText}</span>
